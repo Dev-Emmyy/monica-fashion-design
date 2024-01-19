@@ -9,10 +9,10 @@ export default function Home() {
       <div>
         <div class="flex flex-row justify-between items-center gap-7"> 
           <div class="w-2/5 bg-[#000000] text-[#f9f9f9] h-56 font-dancing flex flex-row justify-between items-center ">
-            <h2 class="text-4xl">Our Story</h2>
+            <h2 class="text-4xl pl-10">Our Story</h2>
           </div>
           <div class="w-3/5 p-5">
-            <p class="text-justify font-dancing text-base">
+            <p class="text-justify font-dancing text-">
             In the vibrant and culturally rich land of Benue, Nigeria, there emerged a trailblazing fashion designer named Monique Chanel Coco. 
             Born into the heart of West Africa, Monique's journey in the world of fashion began with the rhythmic beats of traditional Benue music and the vibrant colors of her homeland.
             Growing up in a community that celebrated diversity, Monique was inspired by the kaleidoscope of fabrics worn during festive occasions. 
