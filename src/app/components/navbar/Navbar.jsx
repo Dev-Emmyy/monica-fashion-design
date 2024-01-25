@@ -15,8 +15,8 @@ const links = [
    },
    {
        id: 3,
-       title: "Shop",
-       url: "/shop"
+       title: "Collections",
+       url: "/collections"
    },
    {
        id: 4,
@@ -33,7 +33,7 @@ const links = [
 
 const Navbar = () => {
     return(
-       <div class="flex justify-between items-center px-10 py-1 bg-[#f9f9f9] font-sans sticky top-0 z-10">
+       <div class="flex justify-between items-center px-10 py-1 bg-[#f9f9f9] font-sans sticky top-0 z-10 border-b-2 border-gray-300 h-full">
         <div>
         <Image
               src="/logo.png"
