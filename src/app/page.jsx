@@ -18,7 +18,6 @@ export default function Home() {
             In the vibrant and culturally rich land of Benue, Nigeria, there emerged a trailblazing fashion designer named Monique Chanel Coco. 
             Born into the heart of West Africa, Monique's journey in the world of fashion began with the rhythmic beats of traditional Benue music and the vibrant colors of her homeland.
             Growing up in a community that celebrated diversity, Monique was inspired by the kaleidoscope of fabrics worn during festive occasions. 
-            The intricate patterns and bold colors of traditional Nigerian attire fueled her imagination and kindled a passion for design.
             </p>
            </div>
            <div class="mt-8 flex justify-end items-end">
