@@ -33,7 +33,7 @@ const links = [
 
 const Navbar = () => {
     return(
-       <div class="flex justify-between items-center px-10 py-1 bg-[#f9f9f9] font-sans sticky top-0 z-10 border-b-2 border-gray-300 h-full">
+       <div class="flex justify-between items-center px-10 py-1 bg-[#013220] font-sans sticky top-0 z-10 border-black-300 h-full">
         <div>
         <Image
               src="/logo.png"
@@ -44,7 +44,7 @@ const Navbar = () => {
               priority
             />
         </div>
-        <div class="text-[#000000] flex justify-between items-center text-lg font-medium font-dancing w-2/5">
+        <div class="text-[#FFFDD0] flex justify-between items-center text-lg font-medium font-dancing w-2/5">
             {
              links.map(link => (
                 <Link key={link.id} href={link.url}>{link.title}</Link>

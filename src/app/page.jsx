@@ -6,11 +6,11 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div>
-      <div class="bg-[url('/img/Bg_5.jpg')]  bg-cover bg-center bg-no-repeat bg-center bg-local h-screen relative"></div>
+      <div class="bg-[url('/img/Bg_8.jpg')] bg-cover bg-center bg-no-repeat bg-center bg-local h-screen relative"></div>
       <div>
         <div class="flex flex-row justify-between gap-7"> 
-          <div class="w-2/5 bg-[#000000] text-[#f9f9f9] font-dancing flex flex-row justify-between items-center ">
-            <h2 class="text-5xl pl-16">Our Story</h2>
+          <div class="w-2/5 bg-[#013220] text-[#f9f9f9] font-dancing flex flex-row justify-between items-center ">
+            <h2 class="text-5xl pl-16 text-[#FFFDD0]">Our Story</h2>
           </div>
           <div class="w-3/5 p-5">
            <div class="pt-8">
@@ -22,7 +22,7 @@ export default function Home() {
            </div>
            <div class="mt-8 flex justify-end items-end">
            <Link href="">
-            <p class="bg-[#000000] text-[#f9f9f9] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Read More</p>
+            <p class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Read More</p>
             </Link>
            </div>
           </div>
