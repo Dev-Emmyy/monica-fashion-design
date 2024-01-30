@@ -33,7 +33,7 @@ const links = [
 
 const Navbar = () => {
     return(
-       <div class="flex justify-between items-center px-10 py-1 bg-[#013220] font-sans sticky top-0 z-10 border-black-300 h-full">
+       <div class="flex justify-between items-center px-10 bg-[#013220] font-sans sticky top-0 z-10 border-black-300 h-full">
         <div>
         <Image
               src="/logo.png"
