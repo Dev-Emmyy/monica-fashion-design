@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <div class="mt-6 bg-[#013220] text-[#FFFDD0] flex items-center justify-between gap-5 py-16 px-12 w-full">
+        <div class=" bg-[#013220] text-[#FFFDD0] flex items-center justify-between gap-5 py-16 px-12 w-full">
             <div class="w-2/6">
                 <h2 class="font-semibold font-mono f italic">
                    Monique Coco Fashion Design leads the way so embrace elegance and define your essence.

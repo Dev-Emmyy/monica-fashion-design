@@ -5,7 +5,7 @@ import Link from 'next/link';
 
  const About_us = () => {
     return (
-        <div class="flex flex-row justify-between content-center gap-3.5">
+        <div class="flex flex-row justify-between content-center gap-3.5 bg-[#FFFDD0] text-[#013220]">
             <div class="w-2/4 mt-12 ml-12 text-justify">
                 <h2 class="mb-5 text-4xl font-semibold font-mono">About Monique Coco</h2>
                 <p class="text-base italic">
@@ -14,7 +14,7 @@ import Link from 'next/link';
                 </p>
                 <div class="mt-8 flex justify-start items-start">
                 <Link href="">
-                    <p class="bg-[#000000] text-[#f9f9f9] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Contact</p>
+                    <p class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Contact</p>
                 </Link>
                 </div>
             </div>
