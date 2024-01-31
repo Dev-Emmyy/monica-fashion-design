@@ -10,6 +10,7 @@ import Link from 'next/link';
         firstName: '',
         lastName: '',
         email: '',
+        phone: '',
         message: ''
       });
     
@@ -38,7 +39,7 @@ import Link from 'next/link';
             <div>
             <form onSubmit={handleSubmit} class="">
             <div class="mb-4">
-                <label htmlFor="firstName" class="block text-[#013220]">First Name</label>
+                <label htmlFor="firstName" class="block text-[#013220] font-semibold">First Name</label>
                 <input
                 type="text"
                 id="firstName"
@@ -46,11 +47,11 @@ import Link from 'next/link';
                 value={formData.firstName}
                 onChange={handleChange}
                 required
-                class="border-solid border-b-2 border-black outline-none"
+                class="border-solid border-2 border-black-500 rounded outline-none w-4/12 py-1 px-3 focus:border-rose-200 focus:border-4"
                 />
             </div>
             <div class="mb-4">
-                <label htmlFor="lastName" class="block text-[#013220]">Last Name</label>
+                <label htmlFor="lastName" class="block text-[#013220] font-semibold">Last Name</label>
                 <input
                 type="text"
                 id="lastName"
@@ -58,11 +59,11 @@ import Link from 'next/link';
                 value={formData.lastName}
                 onChange={handleChange}
                 required
-                class="border-solid border-b-2 border-black outline-none"
+                class="border-solid border-2 border-black-500 rounded outline-none w-4/12 py-1 px-3 focus:border-rose-200 focus:border-4"
                 />
             </div>
             <div class="mb-4">
-                <label htmlFor="email" class="block text-[#013220]">Email</label>
+                <label htmlFor="email" class="block text-[#013220] font-semibold">Email</label>
                 <input
                 type="email"
                 id="email"
@@ -70,18 +71,30 @@ import Link from 'next/link';
                 value={formData.email}
                 onChange={handleChange}
                 required
-                class="border-solid border-b-2 border-black outline-none"
+                class="border-solid border-2 border-black-500 rounded outline-none w-4/12 py-1 px-3 focus:border-rose-200 focus:border-4"
                 />
             </div>
             <div class="mb-4">
-                <label htmlFor="message" class="block text-[#013220]">Message</label>
+            <label htmlFor="phone" class="block text-[#013220] font-semibold">Phone Number</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                onChange={handleChange}
+                value={formData.phone}
+                required
+                class="border-solid border-2 border-black-500 rounded outline-none w-4/12 py-1 px-3 focus:border-rose-200 focus:border-4"
+            />
+            </div>
+            <div class="mb-4">
+                <label htmlFor="message" class="block text-[#013220] font-semibold">Message</label>
                 <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
-                class="border-solid border-b-2 border-black outline-none"
+                class="border-solid border-2 border-black-500 rounded outline-none w-4/12 py-1 px-3 focus:border-rose-200 focus:border-4"
                 />
             </div>
             <button type="submit" class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Submit</button>
