@@ -6,8 +6,8 @@ import Link from 'next/link';
  const Collections = () => {
     return (
     <div class="bg-[#FFFDD0]">
-       <div class="p-7">
-         <div class="flex gap-8 mb-5">
+       <div class="py-9 px-7">
+         <div class="flex gap-8 mb-9">
          <div class="flex shadow-lg shadow-gray-800">
             <Image
                 src="/collections_img/pink_gown/pink gown.jpg"
@@ -43,7 +43,7 @@ import Link from 'next/link';
          </div>
          </div>
 
-         <div class="flex gap-8 mb-5">
+         <div class="flex gap-8 mb-9">
          <div class="flex shadow-lg shadow-gray-800">
             <Image
                 src="/collections_img/hips_gown/hips gown.jpg"
@@ -79,7 +79,7 @@ import Link from 'next/link';
          </div>
          </div>
 
-         <div class="flex gap-8 mb-5">
+         <div class="flex gap-8 mb-9">
          <div class="flex shadow-lg shadow-gray-800">
             <Image
                 src="/collections_img/green_gown/green gown.jpg"

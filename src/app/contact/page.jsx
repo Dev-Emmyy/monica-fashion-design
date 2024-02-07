@@ -24,9 +24,16 @@ import Link from 'next/link';
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData); // Do something with the form data, like sending it to a server
-        // You can also reset the form here if needed
-      };
+        emailjs.sendForm('service_4po4n6b', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+            .then((result) => {
+                console.log(result.text);
+                alert('Message sent successfully!');
+            }, (error) => {
+                console.error('Error sending message:', error.text);
+                alert('Failed to send message');
+            });
+    };
+
     return (
        <div>
         <div class="bg-[url('/img/contact_bg.jpg')] bg-cover bg-center bg-no-repeat bg-center bg-local min-h-96 relative">
@@ -96,7 +103,7 @@ import Link from 'next/link';
                 class="border-solid border-2 border-black-500 rounded outline-none w-6/12 h-60 py-1 px-3 focus:border-rose-200 focus:border-4"
                 />
             </div>
-            <button type="submit" class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Submit</button>
+            <button type="submit" class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Send Us</button>
             </form>
         </div>
 
