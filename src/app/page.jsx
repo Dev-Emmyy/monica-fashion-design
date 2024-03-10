@@ -21,7 +21,7 @@ export default function Home() {
             </p>
            </div>
            <div class="mt-8 flex justify-end items-end">
-           <Link href="">
+           <Link href="/about-us">
             <p class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Read More</p>
             </Link>
            </div>

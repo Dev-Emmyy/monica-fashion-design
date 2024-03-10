@@ -1,40 +1,56 @@
 'use client';
-import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
+import { SMTPClient } from 'emailjs';
 
 const Contact = () => {
-  const form = useRef();
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
 
-    setIsLoading(true);
-    setError(null);
-    setSuccessMessage(null);
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    try {
-      const result = await emailjs.sendForm(
-        'service_4po4n6b', // Replace with your service ID
-        'template_ivc5zmq', // Replace with your template ID
-        form.current,
-        '2KbE1OKpP-zOBY0oj' // Replace with your user ID
-      );
+        // Initialize the SMTP client with your SMTP server details
+        const client = new SMTPClient({
+            user: 'user',
+            password: 'password',
+            host: 'smtp.your-email.com',
+            ssl: true,
+        });
 
-      if (result.status === 200) {
-        setSuccessMessage('Message sent successfully!');
-      } else {
-        setError('Failed to send message. Please try again later.');
-      }
-    } catch (error) {
-      setError('An error occurred. Please try again later.');
-      console.error('Error sending email:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+        // Construct the email message
+        const message = {
+            text: formData.message,
+            from: `${formData.name} <${formData.email}>`,
+            to: 'emmanuelugochukwu2000@gmail.com', // Specify your recipient's email address
+            subject: 'Contact Form Submission'
+        };
+
+        // Send the email
+        client.send(message, (err, response) => {
+            if (err) {
+                console.error('Error sending email:', err);
+            } else {
+                console.log('Email sent successfully:', response);
+                // Optionally, reset the form fields after successful submission
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+            }
+        });
+    };
 
   return (
     <div>
@@ -45,14 +61,17 @@ const Contact = () => {
       </div>
 
       <div class="my-14 mx-12">
-        <form ref={form} onSubmit={sendEmail}>
+        <form onSubmit={handleSubmit}>
           <div class="mb-4">
             <label htmlFor="user_name" class="block text-[#013220] font-semibold">
               Full Name <a class="text-[#ff007f]">*</a>
             </label>
             <input
               type="text"
-              name="user_name"
+              id="name"
+              name="name" 
+              value={formData.name} 
+              onChange={handleChange}
               class="border-solid border-2 border-black-500 rounded outline-none w-6/12 py-1 px-3 focus:border-rose-200 focus:border-4"
               required
             />
@@ -63,7 +82,10 @@ const Contact = () => {
             </label>
             <input
               type="email"
-              name="user_email"
+              id="email" 
+              name="email" 
+              value={formData.email} 
+              onChange={handleChange}
               class="border-solid border-2 border-black-500 rounded outline-none w-6/12 py-1 px-3 focus:border-rose-200 focus:border-4"
               required
             />
@@ -73,16 +95,14 @@ const Contact = () => {
               How may we help you? <a class="text-[#ff007f]">*</a>
             </label>
             <textarea
-              name="message"
+             id="message" 
+             name="message" 
+             value={formData.message} 
+             onChange={handleChange}
               class="border-solid border-2 border-black-500 rounded outline-none w-6/12 h-60 py-1 px-3 focus:border-rose-200 focus:border-4"
               required
             />
           </div>
-
-          {isLoading && <p class="text-center mb-4">Sending message...</p>}
-          {error && <p class="text-center text-red-500 mb-4">{error}</p>}
-          {successMessage && <p class="text-center text-green-500 mb-4">{successMessage}</p>}
-
           <input type="submit" value="Send" class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]" />
         </form>
       </div>

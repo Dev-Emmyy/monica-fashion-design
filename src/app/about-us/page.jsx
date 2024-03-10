@@ -13,7 +13,7 @@ import Link from 'next/link';
                 The intricate patterns and the bold, vivacious colors of traditional Nigerian attire not only fueled her imagination but also kindled a profound and unwavering passion for design within Monique. From these early influences, she embarked on a creative odyssey, crafting her unique style that harmonizes the essence of her heritage with a contemporary flair. Monique Chanel Coco stands as a testament to the fusion of tradition and innovation, creating fashion that transcends boundaries and celebrates the beauty of cultural diversity.
                 </p>
                 <div class="mt-8 flex justify-start items-start">
-                <Link href="">
+                <Link href="/contact">
                     <p class="bg-[#013220] text-[#FFFDD0] px-6 py-2 transition-all duration-300 border hover:text-black hover:border-black hover:bg-[#f9f9f9]">Contact</p>
                 </Link>
                 </div>
