@@ -20,11 +20,6 @@ const links = [
    },
    {
        id: 4,
-       title: "Videos",
-       url: "/videos"
-   },
-   {
-       id: 5,
        title: "Contact",
        url: "/contact"
    },
@@ -33,18 +28,18 @@ const links = [
 
 const Navbar = () => {
     return(
-       <div class="flex justify-between items-center px-10 bg-[#013220] font-sans sticky top-0 z-10 border-black-300 h-full">
+       <div class="flex justify-between items-center px-10 py-3 bg-[#013220] font-sans sticky top-0 z-10 border-black-300 h-full">
         <div>
         <Image
               src="/logo.png"
               alt="Logo"
               width={200}
               height={200}
-              class="w-48 h-36"
+              
               priority
             />
         </div>
-        <div class="text-[#FFFDD0] flex justify-between items-center text-lg font-medium font-dancing w-2/5">
+        <div className="text-[#FFFDD0] flex justify-between items-center text-lg font-medium font-dancing w-full sm:w-2/6">
             {
              links.map(link => (
                 <Link key={link.id} href={link.url}>{link.title}</Link>
