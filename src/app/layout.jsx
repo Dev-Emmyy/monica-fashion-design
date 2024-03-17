@@ -1,4 +1,5 @@
-import './globals.css'
+import './globals.css';
+import Head from 'next/head';
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer.jsx';
 
@@ -12,7 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <body class="min-h-screen">
         <Navbar/>
         {children}
         <Footer/>
