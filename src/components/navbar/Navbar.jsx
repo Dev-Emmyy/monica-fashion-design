@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -26,41 +26,96 @@ const links = [
    },
 ]
 
+
 const Navbar = () => {
-    const [showMenu, setShowMenu] = useState(false);
 
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
-    };
+    const [isClick,setisClick] = useState(false);
 
+    const toggleNavbar = () => {
+        setisClick(!isClick);
+    }
     return(
-        <div className="relative">
-            <div className="flex justify-between items-center px-10 py-3 bg-[#013220] font-sans sticky top-0 z-10 border-black-300">
-                <div>
+       <div className="bg-[#013220] sticky top-0 z-10 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-32">
+                <div className="flex items-center">
+                    <div className="flex-shrink-0">
                     <Image
                         src="/logo.png"
                         alt="Logo"
                         width={200}
                         height={200}
+                        
                         priority
                     />
+                    </div>
                 </div>
-                <div className="text-[#FFFDD0] flex justify-between items-center text-lg font-medium font-dancing w-full sm:w-2/6">
-                    <button onClick={toggleMenu} className="sm:hidden">Menu</button>
+                <div className="hidden md:block">
+                    <div className="ml-4 flex items-center space-x-4">
+                    {
+                    links.map(link => (
+                        <Link key={link.id} href={link.url} className="text-[#FFFDD0] text-lg font-medium font-dancing hover:bg-[#FFFDD0] hover:text-[#013220] rounded-lg p-2">{link.title}</Link>
+                    ))
+                    }
+                    </div>
                 </div>
-            </div>
-            <div className={`fixed top-0 right-0 h-full w-full bg-[#013220] text-white transition-transform duration-300 sm:transform-none ${showMenu ? 'translate-x-0' : 'translate-x-full'}`}>
-                <div className="flex flex-col items-center justify-center h-full">
-                    <button onClick={toggleMenu} className="absolute top-0 right-0 m-4">X</button>
-                    {links.map(link => (
-                        <Link key={link.id} href={link.url} legacyBehavior>
-                            <a className="py-2">{link.title}</a>
-                        </Link>
-                    ))}
+                <div className="md:hidden items-center">
+                    <button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus-ring-white" onClick={toggleNavbar}>
+                        {
+                            isClick ? (
+                                <svg
+                                className="h-6 w-6"
+                                xmlns="http://www/w3/org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                >
+                                    <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            ) : (
+                                <svg
+                                className="h-6 w-6"
+                                xmlns="http://www/w3/org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                >
+                                    <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16m-7 6h7"
+                                    />
+                                </svg>
+                            )
+                        }
+                    </button>
                 </div>
             </div>
         </div>
-    );
+        {isClick && (
+            <div className="md:hidden">
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                {
+                    links.map(link => (
+                        <Link key={link.id} href={link.url} className="block  text-[#FFFDD0] text-lg font-medium font-dancing hover:bg-[#FFFDD0] hover:text-[#013220] rounded-lg p-2">{link.title}</Link>
+                    ))
+                    }
+                </div>
+            </div>
+        )}
+       </div>
+    )
 }
 
 export default Navbar;
+
+
+
+
+
