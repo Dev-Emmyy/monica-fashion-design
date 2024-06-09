@@ -1,0 +1,19 @@
+<div class="flex justify-between items-center px-10 py-3 bg-[#013220] font-sans sticky top-0 z-10 border-black-300 h-full">
+        <div>
+        <Image
+              src="/logo.png"
+              alt="Logo"
+              width={200}
+              height={200}
+              
+              priority
+            />
+        </div>
+        <div className="text-[#FFFDD0] flex justify-between items-center text-lg font-medium font-dancing w-full sm:w-2/6">
+            {
+             links.map(link => (
+                <Link key={link.id} href={link.url}>{link.title}</Link>
+             ))
+            }
+        </div>
+       </div>
