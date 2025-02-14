@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 
 
@@ -16,7 +15,7 @@ export default function Home() {
         <div class="pt-8">
           <p class="text-justify font-dancing text-lg text-[#013220]">
             In the vibrant and culturally rich land of Benue, Nigeria, there emerged a trailblazing fashion designer named Monique Chanel Coco. 
-            Born into the heart of West Africa, Monique's journey in the world of fashion began with the rhythmic beats of traditional Benue music and the vibrant colors of her homeland.
+            Born into the heart of West Africa, Monique&apos;s journey in the world of fashion began with the rhythmic beats of traditional Benue music and the vibrant colors of her homeland.
             Growing up in a community that celebrated diversity, Monique was inspired by the kaleidoscope of fabrics worn during festive occasions. 
           </p>
         </div>
@@ -30,4 +29,4 @@ export default function Home() {
   </div>
  </div>
   )
-}
+};
